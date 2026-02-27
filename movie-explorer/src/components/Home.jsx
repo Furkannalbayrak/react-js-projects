@@ -68,14 +68,14 @@ function Home() {
       <div className="bg-gray-800 py-8 px-4 shadow-xl border-b border-gray-700">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-10">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 tracking-tighter">
-            FilmCeNNeti
+            CinemaHub
           </h2>
 
           <div className="relative w-full md:w-1/2 lg:w-1/3">
             <input
               className="w-full bg-gray-700 text-white border border-gray-600 rounded-full py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all placeholder-gray-400"
               type="text"
-              placeholder="Film ara..."
+              placeholder="Search movies..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
@@ -89,11 +89,11 @@ function Home() {
       {/* Film Listesi */}
       <div className="max-w-7xl mx-auto sm:px-10 px-6 mt-10">
         <h3 className="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-3">
-          {inputValue ? `"${inputValue}" için sonuçlar` : "Popüler Filmler"}
+          {inputValue ? `"${inputValue}" için sonuçlar` : "Popular Movies"}
         </h3>
 
         {loading ? (
-          <p className="text-center text-gray-400 animate-pulse">Filmler yükleniyor...</p>
+          <p className="text-center text-gray-400 animate-pulse">Loading...</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-5 gap-3">
             {

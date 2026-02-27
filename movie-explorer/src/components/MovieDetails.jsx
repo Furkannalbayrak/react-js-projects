@@ -30,7 +30,7 @@ function MovieDetails() {
         onClick={() => navigate(-1)}
         className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 bg-gray-800/80 backdrop-blur-sm rounded-lg hover:bg-gray-700 transition text-sm"
       >
-        <FaArrowLeft /> Geri
+        <FaArrowLeft /> back
       </button>
 
       <div className="max-w-5xl w-full bg-gray-800 rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">

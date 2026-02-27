@@ -89,7 +89,7 @@ function Home() {
       {/* Film Listesi */}
       <div className="max-w-7xl mx-auto sm:px-10 px-6 mt-10">
         <h3 className="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-3">
-          {inputValue ? `"${inputValue}" için sonuçlar` : "Popular Movies"}
+          {inputValue ? `Results for "${inputValue}"` : "Popular Movies"}
         </h3>
 
         {loading ? (

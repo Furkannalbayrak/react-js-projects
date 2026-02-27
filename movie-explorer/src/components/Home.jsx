@@ -42,14 +42,23 @@ function Home() {
       }
 
       try {
-        const datas = await axios.get(`http://www.omdbapi.com/?apikey=744d179f&s=${inputValue}`);
-        if (datas.data.Search) {
-          setFilterMovies(datas.data.Search);
+        // Önce arama yap
+        const searchResponse = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${inputValue}`);
+
+        if (searchResponse.data.Search) {
+          // Her film için detaylı bilgi çek
+          const detailedMovies = await Promise.all(
+            searchResponse.data.Search.map((movie) =>
+              axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&i=${movie.imdbID}`)
+            )
+          );
+          setFilterMovies(detailedMovies.map(res => res.data));
         } else {
           setFilterMovies([]);
         }
       } catch (error) {
         console.error("Hata:", error);
+        setFilterMovies([]);
       }
     };
 
